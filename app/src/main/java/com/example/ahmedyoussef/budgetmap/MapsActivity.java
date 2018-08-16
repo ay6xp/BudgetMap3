@@ -2,6 +2,7 @@ package com.example.ahmedyoussef.budgetmap;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -23,7 +24,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 
 
-public class MapsActivity extends AppCompatActivity {
+public class MapsActivity extends AppCompatActivity implements BudgetDialog.BudgetDialogListener {
 
     private GoogleMap mMap;
     private static final String TAG = "MainActivity";
@@ -31,6 +32,7 @@ public class MapsActivity extends AppCompatActivity {
 
     private SectionPageAdapter mSectionPageAdapter;
     private ViewPager mViewPager;
+
 
 
     @Override
@@ -92,5 +94,15 @@ public class MapsActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog, String budget, String radius) {
+
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
+    }
 
 }
